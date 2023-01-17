@@ -1,16 +1,15 @@
-from pyDes
-import *
+from pyDes import *
 ac = "1478000129000000234800005E6BC66300000000B4DE98F14555450EE2B87CF33A74D064E155564A27A094D40545779FA166F7CB9FF4F85EAE70CF988FBF09073D67EDAADB5BB60F50148A8E48A10DE35942C959B9C9A2463FCC63C7B9C9A2463FCC63C7B9C9A2463FCC63C7B9C9A2463FCC63C7B9C9A2463FCC63C7B9C9A2463FCC63C777E1697DC051EB52"
 ac = bytes().fromhex(ac)
-key1 = ac[4: 20] + b '\x00\x00\x00\x00\x00\x00\x00\x00'
+key1 = ac[4:20] + b '\x00\x00\x00\x00\x00\x00\x00\x00'
 print("key1  hex: %r" % key1.hex())
-key2 = ac[20: ]
+key2 = ac[20:]
 print("key2  hex: %r" % key2.hex())
 key3 = triple_des(key1, ECB, pad = None, padmode = PAD_PKCS5)
 key4 = key3.decrypt(key2)
 print("key4  bytes:  %r" % key4)
 key5 = key4[48: 72]
-print("key5 len: %r" % len(key5))
+print("key5 len: %r"  % len(key5))
 print("key5  hex: %r" % key5)
 str = "test"
 strbytes = str.encode("UTF-8")
