@@ -1,0 +1,1 @@
+# ZTE-STB-TOOL-REG
